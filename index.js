@@ -1,6 +1,6 @@
 import { config } from "dotenv";
 config()
-import Discord, { GatewayIntentBits, Partials } from 'discord.js'
+import { Client, GatewayIntentBits, Partials } from 'discord.js'
 import { Configuration, OpenAIApi } from 'openai'
 import { runLangchain } from "./langchain.js";
 import { aiContext, aiMood } from "./constants.js";
@@ -13,7 +13,7 @@ const openai = new OpenAIApi(openaiconfig)
 //////////
 
 // Configure Discord
-const Client = new Discord.Client({
+const Discord = new Client({
     intents: [
         GatewayIntentBits.Guilds,
         GatewayIntentBits.GuildMessages,
@@ -25,15 +25,15 @@ const Client = new Discord.Client({
     partials: [Partials.Message, Partials.Channel, Partials.Reaction]
 })
 
-Client.login(process.env.DISCORD_TOKEN)
+Discord.login(process.env.DISCORD_TOKEN)
 //////////
 
 // Configure Discord Events
-Client.on('ready', () => {
-    console.log(`Logged in as ${Client.user.tag}!`)
+Discord.on('ready', () => {
+    console.log(`Logged in as ${Discord.user.tag}!`)
 })
 
-Client.on('interactionCreate', async interaction => {
+Discord.on('interactionCreate', async interaction => {
     if (!interaction.isCommand()) return;
 
     const { commandName } = interaction;
