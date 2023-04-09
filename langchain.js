@@ -1,26 +1,16 @@
 import { config } from "dotenv";
 config()
 import { OpenAI } from 'langchain/llms' 
-import { ChatOpenAI } from 'langchain/chat_models'
 import { TextLoader } from 'langchain/document_loaders'
 import { RecursiveCharacterTextSplitter } from 'langchain/text_splitter'
 import { OpenAIEmbeddings } from 'langchain/embeddings'
 import { HNSWLib } from 'langchain/vectorstores'
-import { VectorStoreToolkit, createVectorStoreAgent, initializeAgentExecutor } from 'langchain/agents'
+import { initializeAgentExecutor } from 'langchain/agents'
 import { ChainTool } from 'langchain/tools'
 import { VectorDBQAChain } from 'langchain/chains'
 
-// const model = new ChatOpenAI({temperature: 0})
 const model = new OpenAI({temperature: 0.5, maxTokens: 150, topP: 1, frequencyPenalty: 0, presencePenalty: 0, bestOf: 1, n: 1, stream: false})
 let agent
-
-//Load Pinecone
-// const pinecone = new PineconeClient();
-// await pinecone.init({
-// apiKey: process.env.PINECONE_API_KEY,
-// environment: process.env.PINECONE_ENVIRONMENT,
-// });
-////////////////////////////////////////////////////////////////
 
 const load = async(filename) => {
     const loader = new TextLoader(filename)
@@ -35,7 +25,6 @@ const load = async(filename) => {
     console.log("Docs split")
     console.log("Creating vector store")
     const vectorStore = await HNSWLib.fromDocuments(docs, new OpenAIEmbeddings())
-    // const vectorStore = await PineconeStore.fromDocuments(docs, new OpenAIEmbeddings(), {"pineconeIndex": pinecone.Index(process.env.PINECONE_INDEX)})
     if (vectorStore) return vectorStore
 }
 
