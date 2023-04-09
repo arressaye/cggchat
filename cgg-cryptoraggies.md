@@ -1,8 +1,9 @@
-Introducing CryptoRaggies, an innovative NFT project on the Cardano blockchain that celebrates Ragdoll cats and the diverse crypto community. Our handcrafted, one-of-a-kind NFTs feature actual coat colors and patterns of Ragdoll cats, complete with vibrant backgrounds and accessories. As passionate blockchain enthusiasts, we seamlessly integrate Cardano and crypto culture into our artwork.
+What is CryptoRaggies?
+    Introducing CryptoRaggies, an innovative NFT project on the Cardano blockchain that celebrates Ragdoll cats and the diverse crypto community. Our handcrafted, one-of-a-kind NFTs feature actual coat colors and patterns of Ragdoll cats, complete with vibrant backgrounds and accessories. As passionate blockchain enthusiasts, we seamlessly integrate Cardano and crypto culture into our artwork.
 
-We're not just about stunning visuals—our Raggies have utility too! Play our first game, RaggieRun, on PC, iOS, and Android, the pioneering wallet-enabled game on Cardano and the first CNFT game on Google Play and the iOS App Store.
+    We're not just about stunning visuals—our Raggies have utility too! Play our first game, RaggieRun, on PC, iOS, and Android, the pioneering wallet-enabled game on Cardano and the first CNFT game on Google Play and the iOS App Store.
 
-CryptoRaggies aims to create a harmonious ecosystem, exploring NFT technology beyond art and constantly adding value to the project. Join us as we build the decentralized future of NFTs and celebrate the love for Ragdoll cats!
+    CryptoRaggies aims to create a harmonious ecosystem, exploring NFT technology beyond art and constantly adding value to the project. Join us as we build the decentralized future of NFTs and celebrate the love for Ragdoll cats!
 
 What are the suite of products built by CryptoRaggies?
 
