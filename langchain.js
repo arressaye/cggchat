@@ -42,7 +42,7 @@ const load = async(filename) => {
 const init = async() => {
     const genVectorStore = await load("./cgg-general.md")
     const bgVectorStore = await load("./cgg-background.md")
-    const raggieVectorStore = await load("./cgg-cryptoraggies.md")
+    const raggiesVectorStore = await load("./cgg-cryptoraggies.md")
     const generalQA = new ChainTool({
         name: "cgg-general-qa",
         description: "general information about CGG including founding member details, mission, vision and aims",
@@ -53,12 +53,12 @@ const init = async() => {
         description: "background information about CGG explaining circumstances around its founding and lack of support from Cardano Foundation currently",
         chain: VectorDBQAChain.fromLLM(model, bgVectorStore)
     })
-    const raggieQA = new ChainTool({
+    const raggiesQA = new ChainTool({
         name: "cgg-cryptoraggies-qa",
         description: "information about the Cryptoraggies project, including the ecosystem and the NFTs",
-        chain: VectorDBQAChain.fromLLM(model, raggieVectorStore)
+        chain: VectorDBQAChain.fromLLM(model, raggiesVectorStore)
     })
-    const tools = [generalQA, backgroundQA]
+    const tools = [generalQA, backgroundQA, raggiesQA]
     agent = await initializeAgentExecutor(
         tools,
         model,
