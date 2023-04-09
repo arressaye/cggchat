@@ -1,12 +1,11 @@
 import { config } from "dotenv";
 config()
-import { PineconeClient } from "@pinecone-database/pinecone";
 import { OpenAI } from 'langchain/llms' 
 import { ChatOpenAI } from 'langchain/chat_models'
 import { TextLoader } from 'langchain/document_loaders'
 import { RecursiveCharacterTextSplitter } from 'langchain/text_splitter'
 import { OpenAIEmbeddings } from 'langchain/embeddings'
-import { HNSWLib, PineconeStore } from 'langchain/vectorstores'
+import { HNSWLib } from 'langchain/vectorstores'
 import { VectorStoreToolkit, createVectorStoreAgent, initializeAgentExecutor } from 'langchain/agents'
 import { ChainTool } from 'langchain/tools'
 import { VectorDBQAChain } from 'langchain/chains'
