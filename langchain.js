@@ -40,9 +40,9 @@ const load = async(filename) => {
 }
 
 const init = async() => {
-    const genVectorStore = await load("./cgg-general.md")
-    const bgVectorStore = await load("./cgg-background.md")
-    const raggiesVectorStore = await load("./cgg-cryptoraggies.md")
+    const genVectorStore = await load("./knowledge/cgg-general.md")
+    const bgVectorStore = await load("./knowledge/cgg-background.md")
+    const raggiesVectorStore = await load("./knowledge/cgg-cryptoraggies.md")
     const generalQA = new ChainTool({
         name: "cgg-general-qa",
         description: "general information about CGG including founding member details, mission, vision and aims",
